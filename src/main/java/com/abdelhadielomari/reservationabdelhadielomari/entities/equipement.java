@@ -4,6 +4,7 @@ import com.abdelhadielomari.reservationabdelhadielomari.enums.TypeEq;
 import com.abdelhadielomari.reservationabdelhadielomari.enums.reservationStatue;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -14,6 +15,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class equipement {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Ideq;
