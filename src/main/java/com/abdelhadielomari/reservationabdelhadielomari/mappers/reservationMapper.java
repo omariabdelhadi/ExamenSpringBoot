@@ -23,6 +23,11 @@ public class reservationMapper {
     public reservationDTO fromreservation(reservation reservation){
         reservationDTO reservationDTO=new reservationDTO();
         BeanUtils.copyProperties(reservation,reservationDTO);
+        reservationDTO.setIds(reservation.getSalle().getIds());
+        reservationDTO.setIde(reservation.getEmploye().getIde());
+        if (reservation.getEquipements()!=null){
+            reservation.getEquipements().forEach(e->reservationDTO.getEquipementIds().add(e.getIdeq()));
+        }
         return reservationDTO;
     }
 
@@ -31,7 +36,9 @@ public class reservationMapper {
         BeanUtils.copyProperties(reservationDTO,reservation);
         reservation.setSalle(salleRepo.findById(reservationDTO.getIds()).orElse(null));
         reservation.setEmploye(employeRepo.findById(reservationDTO.getIde()).orElse(null));
-        reservation.setEquipements(equipementRepo.findAllById(reservationDTO.getEquipementIds()));
+        if (reservationDTO.getEquipementIds()!=null){
+            reservation.setEquipements(equipementRepo.findAllById(reservationDTO.getEquipementIds()));
+        }
         return reservation;
     }
 }

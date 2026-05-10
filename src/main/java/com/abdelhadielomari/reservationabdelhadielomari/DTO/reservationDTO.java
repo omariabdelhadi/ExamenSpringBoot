@@ -21,7 +21,7 @@ public class reservationDTO {
     private Long idr;
     private Long ids;
     private Long ide;
-    private List<Long> equipementIds;
+    private List<Long> equipementIds=new ArrayList<>();
     private Date date;
     private Integer duree;
     private String description;

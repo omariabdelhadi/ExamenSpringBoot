@@ -25,7 +25,7 @@ public class ReservationAbdelhadiElOmariApplication {
         SpringApplication.run(ReservationAbdelhadiElOmariApplication.class, args);
     }
 
-    @Bean
+    //@Bean
     CommandLineRunner commandLineRunner(EmployeRepo employeRepo, EquipementRepo equipementRepo, ReservationRepo reservationRepo, SalleRepo salleRepo){
         return args -> {
             employe e= employe.builder()
