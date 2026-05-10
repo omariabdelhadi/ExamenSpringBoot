@@ -19,6 +19,9 @@ import java.util.List;
 public class reservationDTO {
 
     private Long idr;
+    private Long ids;
+    private Long ide;
+    private List<Long> equipementIds;
     private Date date;
     private Integer duree;
     private String description;
