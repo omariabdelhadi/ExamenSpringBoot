@@ -16,10 +16,10 @@ import java.util.List;
 @NoArgsConstructor
 public class equipement {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long IdEq;
-    private String nomEq;
+    private Long Ideq;
+    private String nomeq;
     private double poids;
-    private TypeEq typeEq;
+    private TypeEq typeeq;
 
     @ManyToMany(mappedBy = "equipements")
     private List<reservation> reservationList;

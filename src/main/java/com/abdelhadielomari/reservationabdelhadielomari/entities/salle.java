@@ -15,10 +15,10 @@ import java.util.List;
 @NoArgsConstructor
 public class salle {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long IdS;
+    private Long ids;
     private Integer numero;
-    private String nomS;
-    private Integer nombrePlace;
+    private String noms;
+    private Integer nombreplace;
     private TypeS typeSalle;
     @OneToMany(mappedBy = "salle")
     private List<reservation> reservationList;

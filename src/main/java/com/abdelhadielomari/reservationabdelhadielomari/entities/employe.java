@@ -14,8 +14,8 @@ import java.util.List;
 @NoArgsConstructor
 public class employe {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long IdE;
-    private String nomE;
+    private Long ide;
+    private String nom;
     private String email;
     @OneToMany(mappedBy = "employe")
     private List<reservation> reservationList;

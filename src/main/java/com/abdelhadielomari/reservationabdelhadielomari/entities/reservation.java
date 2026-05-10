@@ -16,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 public class reservation {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long IdR;
+    private Long idr;
     private Date date;
     private Integer duree;
     private String description;
