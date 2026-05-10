@@ -31,4 +31,12 @@ public class ReservationServiceImpl implements IReservationService{
         reservationList.forEach(r->reservationDTOList.add(reservationMapper.fromreservation(r)));
         return reservationDTOList;
     }
+
+    @Override
+    public List<reservationDTO> getReservationsByEmploye(String username) {
+        List<reservation> Lr=reservationRepo.findByEmployeEmail(username);
+        List<reservationDTO> rDto=new ArrayList<>();
+        Lr.forEach(lr->rDto.add(reservationMapper.fromreservation(lr)));
+        return rDto;
+    }
 }

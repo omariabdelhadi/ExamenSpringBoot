@@ -8,4 +8,5 @@ import java.util.List;
 public interface IReservationService {
     void AddReservation(reservationDTO reservationDTO);
     List<reservationDTO> listreservation(Long Idemp);
+    List<reservationDTO> getReservationsByEmploye(String username);
 }

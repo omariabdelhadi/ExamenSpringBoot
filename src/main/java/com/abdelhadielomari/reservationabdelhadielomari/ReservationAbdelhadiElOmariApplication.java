@@ -29,34 +29,32 @@ public class ReservationAbdelhadiElOmariApplication {
     CommandLineRunner commandLineRunner(EmployeRepo employeRepo, EquipementRepo equipementRepo, ReservationRepo reservationRepo, SalleRepo salleRepo){
         return args -> {
             employe e= employe.builder()
-                    .nom("ahmed")
-                    .email("exemple@gmail.com")
+                    .nom("amin")
+                    .email("amin@gmail.com")
                     .build();
             reservation r=reservation.builder()
                     .date(new Date())
                     .duree(5)
-                    .description("description")
+                    .description("description1")
                     .reservationstatue(reservationStatue.PENDING)
                     .build();
             equipement eq=equipement.builder()
-                    .nomeq("data show")
+                    .nomeq("PC")
                     .poids(132.0)
                     .typeeq(TypeEq.CAMERA)
                     .build();
             salle s=salle.builder()
                     .numero(123)
-                    .noms("INFO")
+                    .noms("TP")
                     .nombreplace(8)
                     .typeSalle(TypeS.COURS)
                     .build();
 
-            r.setEmploye(e);
-            r.setSalle(s);
-            r.getEquipements().add(eq);
             employeRepo.save(e);
             salleRepo.save(s);
             equipementRepo.save(eq);
-            reservationRepo.save(r);
+
+
 
         };
     }
