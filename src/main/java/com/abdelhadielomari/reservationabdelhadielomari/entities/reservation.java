@@ -2,6 +2,7 @@ package com.abdelhadielomari.reservationabdelhadielomari.entities;
 
 
 import com.abdelhadielomari.reservationabdelhadielomari.enums.reservationStatue;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -24,13 +25,17 @@ public class reservation {
     private Integer duree;
     private String description;
     private reservationStatue reservationstatue;
+
     @ManyToOne
+    @JsonIgnore
     private employe employe;
     @ManyToOne
+    @JsonIgnore
     private salle salle;
 
     @Builder.Default
     @ManyToMany
+    @JsonIgnore
     @JoinTable(
             name = "reservation_equipement",
             joinColumns =@JoinColumn(name = "reservation_id"),

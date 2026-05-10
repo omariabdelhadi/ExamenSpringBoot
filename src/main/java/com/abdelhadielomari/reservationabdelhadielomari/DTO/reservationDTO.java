@@ -5,12 +5,17 @@ import com.abdelhadielomari.reservationabdelhadielomari.entities.equipement;
 import com.abdelhadielomari.reservationabdelhadielomari.entities.salle;
 import com.abdelhadielomari.reservationabdelhadielomari.enums.reservationStatue;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class reservationDTO {
 
     private Long idr;
